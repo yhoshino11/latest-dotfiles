@@ -17,6 +17,8 @@ call neobundle#begin(expand('/Users/yhoshino11/.vim/bundle'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 " Plugins--------------------------------------
+" Elixir
+NeoBundle 'elixir-lang/vim-elixir'
 " NeoComplete
 NeoBundle 'Shougo/neocomplete.vim'
 source $HOME/.vim-setting/plugins/neocomplete.vim
