@@ -25,9 +25,20 @@ source $HOME/.vim-setting/plugins/neocomplete.vim
 NeoBundle 'Shougo/neosnippet.vim'
 source $HOME/.vim-setting/plugins/neosnippet.vim
 NeoBundle 'Shougo/neosnippet-snippets'
-NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'ctrlpvim/ctrlp.vim'
 
+" Lightline
+NeoBundle 'itchyny/lightline.vim'
+source $HOME/.vim-setting/plugins/lightline.vim
+
+" Gundo
+NeoBundle 'sjl/gundo.vim'
+
+" Syntastic
+NeoBundle 'scrooloose/syntastic'
+NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'airblade/vim-gitgutter'
+NeoBundle 'ctrlpvim/ctrlp.vim'
+NeoBundle 'flazz/vim-colorschemes'
 " You can specify revision/branch/tag.
 NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
 
