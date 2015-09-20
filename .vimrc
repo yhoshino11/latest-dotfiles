@@ -1,4 +1,6 @@
 source $HOME/.vim-setting/basic.vim
+source $HOME/.vim-setting/keyremap.vim
+source $HOME/.vim-setting/filetype.vim
 "NeoBundle Scripts-----------------------------
 if has('vim_starting')
   if &compatible
@@ -17,6 +19,11 @@ call neobundle#begin(expand('/Users/yhoshino11/.vim/bundle'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 " Plugins--------------------------------------
+" NERDTree
+NeoBundle 'scrooloose/nerdtree'
+source $HOME/.vim-setting/plugins/nerdtree.vim
+" Markdown
+NeoBundle 'suan/vim-instant-markdown'
 " Elixir
 NeoBundle 'elixir-lang/vim-elixir'
 " NeoComplete
@@ -28,19 +35,53 @@ NeoBundle 'Shougo/neosnippet.vim'
 source $HOME/.vim-setting/plugins/neosnippet.vim
 NeoBundle 'Shougo/neosnippet-snippets'
 
-" Lightline
-NeoBundle 'itchyny/lightline.vim'
-source $HOME/.vim-setting/plugins/lightline.vim
-
 " Gundo
 NeoBundle 'sjl/gundo.vim'
+source $HOME/.vim-setting/plugins/gundo.vim
+
+" Gist
+NeoBundle 'mattn/gist-vim', {'depends': 'mattn/webapi-vim'}
+source $HOME/.vim-setting/plugins/gist.vim
+
+" White Space
+NeoBundle 'ntpeters/vim-better-whitespace'
+source $HOME/.vim-setting/plugins/vim-better-whitespace.vim
+
+" NERDCommenter
+NeoBundle 'scrooloose/nerdcommenter'
+source $HOME/.vim-setting/plugins/nerdcommenter.vim
+
+" Auto Save
+NeoBundle 'vim-scripts/vim-auto-save'
+source $HOME/.vim-setting/plugins/vim-auto-save.vim
+
+" DelimitMate
+NeoBundle 'Raimondi/delimitMate'
+
+" EasyAlign
+NeoBundle 'junegunn/vim-easy-align'
+source $HOME/.vim-setting/plugins/easy-align.vim
 
 " Syntastic
 NeoBundle 'scrooloose/syntastic'
+source $HOME/.vim-setting/plugins/syntastic.vim
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'airblade/vim-gitgutter'
+
+" CtrlP
 NeoBundle 'ctrlpvim/ctrlp.vim'
+source $HOME/.vim-setting/plugins/ctrlp.vim
+
+" Tagbar
+NeoBundle 'majutsushi/tagbar'
+source $HOME/.vim-setting/plugins/tagbar.vim
+
+" Lightline
+NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'flazz/vim-colorschemes'
+source $HOME/.vim-setting/plugins/lightline.vim
+
+
 " You can specify revision/branch/tag.
 NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
 

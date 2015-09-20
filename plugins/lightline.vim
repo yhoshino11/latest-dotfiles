@@ -1,6 +1,8 @@
 set laststatus=2
-set ambiwidth=double
-set noshowmode
+let g:gitgutter_sign_added = '+'
+let g:gitgutter_sign_modified = '~'
+let g:gitgutter_sign_removed = '-'
+
 let g:lightline = {
       \ 'colorscheme': 'landscape',
       \ 'mode_map': { 'c': 'NORMAL' },
@@ -10,6 +12,7 @@ let g:lightline = {
       \ },
       \ 'component_function': {
       \   'fugitive': 'MyFugitive',
+      \   'readonly': 'MyReadonly',
       \   'filename': 'MyFilename',
       \   'fileformat': 'MyFileformat',
       \   'filetype': 'MyFiletype',
@@ -49,6 +52,10 @@ function! MyGitGutter()
   return join(ret, ' ')
 endfunction
 
+function! MyReadonly()
+  return &ft !~? 'help\|vimfiler\|gundo' && &ro ? '🔒' : ''
+endfunction
+
 function! MyModified()
   return &ft =~ 'help' ? '' : &modified ? '+' : &modifiable ? '' : '-'
 endfunction
@@ -56,7 +63,7 @@ endfunction
 function! MyFugitive()
   try
     if expand('%:t') !~? 'Tagbar\|Gundo\|NERD' && &ft !~? 'vimfiler' && exists('*fugitive#head')
-      let mark = '🍺  '  " edit here for cool mark
+      let mark = '🍺  ⭠ ' " edit here for cool mark
       let _    = fugitive#head()
       return strlen(_) ? mark._ : ''
     endif
@@ -70,6 +77,7 @@ function! MyFilename()
   return fname == 'ControlP' ? g:lightline.ctrlp_item :
         \ fname == '__Tagbar__' ? g:lightline.fname :
         \ fname =~ '__Gundo\|NERD_tree' ? '' :
+        \ &ft   == 'unite' ? unite#get_status_string() :
         \ &ft   == 'vimshell' ? b:vimshell.current_dir :
         \ (''   != fname ? fname : '[No Name]') .
         \ (''   != MyModified() ? ' ' . MyModified() : '')
@@ -151,3 +159,4 @@ if !has('gui_running')
 else
   :cd $HOME
 endif
+set noshowmode
