@@ -13,9 +13,11 @@ set noautoindent
 set nosmartindent
 set nobackup
 set noswapfile
+set nowrap
 
 set clipboard=unnamed
 set relativenumber
+set number
 set scrolloff=25
 set virtualedit=block
 

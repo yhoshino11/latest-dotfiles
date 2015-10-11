@@ -1,6 +1,7 @@
 source $HOME/$dotfile/.vim-setting/basic.vim
 source $HOME/$dotfile/.vim-setting/keyremap.vim
 source $HOME/$dotfile/.vim-setting/filetype.vim
+source $HOME/$dotfile/.vim-setting/reload.vim
 
 "NeoBundle Scripts-----------------------------
 if has('vim_starting')
@@ -20,6 +21,8 @@ call neobundle#begin(expand('/Users/yhoshino11/.vim/bundle'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 " Plugins--------------------------------------
+" Dash
+NeoBundle 'rizzatti/dash.vim'
 " End Wise
 NeoBundle 'tpope/vim-endwise'
 " NERDTree
